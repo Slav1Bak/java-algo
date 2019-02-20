@@ -11,6 +11,7 @@ public class Main {
         System.out.println("Najwiekszy wspolny dzielnik to " + a.getNWD(12,6));
         System.out.println("DtB " + a.decimalToBinary(12));
         System.out.println("BtD " + a.binaryToDecimal("1100"));
+        System.out.println("Czy to liczba pierwsza? " + a.isPrimary(15));
 
     }
 }

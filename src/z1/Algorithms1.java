@@ -87,4 +87,22 @@ public class Algorithms1 {
         return decimal;
 
     }
+    public boolean isPrimary(int number){
+        int counter = 0;
+        // inicjalizacja licznika podzielnikow
+        //for zliczamy wszystkie l naturalne do liczby number
+        //sprawdzajac czy te liczby sa dzielnikami number
+        //tak ++
+        //nie nic
+        //zwracamy true jesli licznik ==0; false jesli licznik >0
+
+
+        for (int i =2;i< number; i++){
+            if(number % i == 0){
+                counter++;
+
+            }
+        }
+        return counter == 0 ? true: false;
+    }
 }
