@@ -20,5 +20,13 @@ public class StringControler {
         }
 return counter;
    }
-  
+  public String reveres(){
+
+        String tmp = "";
+        for (int i= content.length()-1; i >= 0; i--){
+            tmp += content.charAt(i);
+
+        }
+        return tmp;
+  }
 }
