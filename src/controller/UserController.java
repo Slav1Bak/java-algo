@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class UserController {
     //kolekcja, metody addUser symulujaca rejestracje w bazie- podaje login, haslo i zwraca boolean czy zostal zarejsetrowany do bazyw czy nie
@@ -43,15 +44,32 @@ public class UserController {
         return false;
     }
 
+    public boolean passwowrdCheck(String newPassword1) {
+        //dlugos hasla co najmniej 6 znakow,  a max 32 znaki
+        String template = ".{6,32}";
+        return Pattern.matches(template, newPassword1);
+    }
+    //musi byc 1 wielka i 1 cyfra
+   public boolean passwordChecker(String newestPassword){
+        //cyfra
+        String template2=".*\\d+.*";
+        //wielka litera
+       String template3 =".*[A-Z]+.*";
+                return Pattern.matches(template2,newestPassword) && Pattern.matches(template3,newestPassword);
+   }
+
     public boolean changePassword(String login, String oldPassword, String newPassword, String newPassword2) {
         for (int i = 0; i < registered_users.size(); i++) {
-            if (registered_users.get(i).getLogin().equals(login)&& registered_users.get(i).getPassword().equals(oldPassword)) {
+            if (registered_users.get(i).getLogin().equals(login) && registered_users.get(i).getPassword().equals(oldPassword)) {
                 if (newPassword.equals(newPassword2) && !newPassword.equals(oldPassword)) {
-                    registered_users.get(i).setPassword(newPassword);
-                    System.out.println("haslo zostalo zmienione");
-                    return true;
+                    if (passwowrdCheck(newPassword) && passwordChecker(newPassword)) {
+                        registered_users.get(i).setPassword(newPassword);
+                        System.out.println("haslo zostalo zmienione");
+                        return true;
+                    }
+
                 }
-                System.out.println("Hasla sa rozne lub takie same jak stare haslo");
+                System.out.println("Hasla sa rozne lub takie same jak stare haslo, lub jest za krotkie");
                 return false;
             }
 

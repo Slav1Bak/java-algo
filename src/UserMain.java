@@ -1,6 +1,9 @@
-import controller.UserController;
+import controller.StringControler;
+        import controller.UserController;
 
+import java.util.Random;
 import java.util.Scanner;
+        import java.util.regex.Pattern;
 
 public class UserMain {
     public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class UserMain {
         uc.addUser("Gaw", "admin23");
         uc.addUser("Slaw", "admin");
         System.out.println();
-       //usuwanie
+        //usuwanie
         uc.deleteUser("Paw");
         uc.deleteUser("PBaw");
         uc.showUsers();
@@ -21,12 +24,13 @@ public class UserMain {
         //   System.out.println("Wpisz haslo");
         //  String pass = sc.nextLine();
         //   uc.addUser(log,pass);
-  //zmiana hasla
+        //zmiana hasla
 
-        uc.changePassword("Slaw","admin","Admin","Admin");
+        uc.changePassword("Slaw","admin","Ad1min","Ad1min");
         uc.changePassword("Sla","admin","Admin","Admin");
         uc.changePassword("Gaw","admin","Admin","Admin");
-        uc.changePassword("Gaw","admin23","admin","Admin");
+        uc.changePassword("Gaw","admin23","Admin","Admin");
 
     }
+
 }
