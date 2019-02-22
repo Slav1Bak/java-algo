@@ -1,0 +1,7 @@
+
+
+Map -> ids            {"id" :1}
+
+Map -> names          {"name" : "Grudziadz"}
+Map -> populations    {"population" : 800000.}
+Map -> areas          {"area" : 8}
