@@ -22,7 +22,10 @@ public class AutoModel {
     }
     public void setEquipmentOrderByName(String name){
         int index = eq_name.indexOf(name);
-        eq_order.set(index,1);
+        if(eq_order.get(index)==0){
+            //dodaawanie wyp
+            eq_order.set(index,1);
+        }
 
     }
 
